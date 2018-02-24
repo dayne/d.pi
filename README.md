@@ -1,15 +1,7 @@
 # d.pi
-Raspberry Pi Project Idea tracking space
 
-Things to do with my Pi's at home
+Raspberry Pi Helper Stuff
 
-* [x] dns & dhcp server
-* [] puppy cam
-* [] connect Canon camera
-  * https://www.linux.com/learn/tutorials/750195-how-to-remote-control-your-camera-with-darktable-on-linux
-* [] cobbler server for home
-* voice control of the livingroom lights
+This [Github](https://github.com) repo **d.pi** is to help track basic scripts and helper tools I've found online, hacked, or developed to support making [RaspberryPi](https://rpf.io) systems a bit more fun.
 
-Who knows. 
-
-https://github.com/dayne/d.pi/issues
+I'm using the [issue tracker](https://github.com/dayne/d.pi/issues) to keep track of both a few future projects or problems I've found.  Feel free to use it to ask me questions about stuff. 

@@ -1,0 +1,2 @@
+package 'espeak'
+package 'festival'

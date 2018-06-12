@@ -11,20 +11,26 @@ function boom() {
   exit 1
 }
 
+
+function info()
+{
+    local -r message="${1}"
+
+    echo -e "\033[1;36m${message}\033[0m" 2>&1
+}
+
 function yak() {
-  echo "###########################################################################"
-  echo ${1} 
-  #echo "# = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = #"
+  info "${1}"
   sleep 1 
 }
 
 function apt_install() {
   yak "apt_install $1"
-  dpkg -l $1 > /dev/null 2>&1
+  dpkg -s $1 > /dev/null 2>&1
   if [ $? -eq 1 ]; then
     yak "#> sudo apt-get install $1"
     sleep 0.5 
-    sudo apt-get install $1
+    sudo apt-get install -yq $1
   else
     echo "#> already got the packages ... skipping install "
   fi

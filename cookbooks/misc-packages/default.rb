@@ -1,4 +1,12 @@
-packages = %w{ telnet mplayer tmux vim feh }
+packages = [ 
+	'git',
+	'telnet',
+	'mplayer',
+	'tmux',
+	'vim',
+	'feh',
+	'cmatrix' 
+]
 packages.each do |p| 
   package p 
 end

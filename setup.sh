@@ -1,6 +1,9 @@
 #!/bin/bash
 
 source lib/helpers.sh
+source lib/apt-update.sh
+
+runAptGetUpdate
 
 apt_install "bundler"
 

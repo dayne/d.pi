@@ -2,6 +2,11 @@
 
 source ${0%/*}/../lib/helpers.sh
 
+function setup_git_identity {
+# verify git identity stuff has been setup
+# ask for github username (store it)
+}
+
 function setup_ssh_keys
 {
   local -r github_user="${1}"

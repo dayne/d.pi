@@ -3,6 +3,8 @@
 source lib/helpers.sh
 source lib/apt-update.sh
 
+require_root
+
 runAptGetUpdate
 
 apt_install "bundler"

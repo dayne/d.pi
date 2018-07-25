@@ -13,7 +13,13 @@ function setup_ssh_keys
   if [ ! -f ~/.ssh/authorized_keys ]; then
     yak "pulling down $github_user keys into ~/.ssh/authorized_keys"
     curl -o ~/.ssh/authorized_keys https://github.com/${github_user}.keys
-    chmod 600 ~/.ssh/authorized_keys
+    if [ $? -eq 0 ]; then
+      chmod 600 ~/.ssh/authorized_keys
+      echo "setup of .ssh/authorized_keys with $1 github keys done"
+    else
+      rm ~/.ssh/authorized_keys
+      boom "curl failed for https://github.com/${github_user}.keys - removing file and bailing out"
+    fi
   else
     yak "~/.ssh/authorized_keys exists already - not adding to it"
   fi

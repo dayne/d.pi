@@ -6,5 +6,3 @@ template "/etc/default/keyboard" do
   group 'root'
   mode '0664'
 end
-
-

@@ -115,3 +115,11 @@ function cp_file {
     echo "# >> exists .. skipping copy ${2}"
   fi
 }
+
+function require_root 
+{
+	if [ $USER != 'root' ]; then
+		boom "this script requires root - please run with sudo"
+		exit 1
+	fi
+}

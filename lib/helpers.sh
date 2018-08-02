@@ -3,20 +3,24 @@
 # Feel free to use as needed
 # Originally devleoped for d.init
 
-function boom() { 
-  echo "############-------------------| BOOM |-------------------------###########"
-  echo ${1}
-  echo "############-------------------| BOOM |-------------------------###########"
-  sleep 1
-  exit 1
+function error {
+  echo -e "\e[31m\e[1m${1}\e[0m"
+}
+
+function warning {
+  echo -e "\e[93m${1}\e[0m"
+
+}
+
+function info {
+  echo -e "\e[32m${1}\e[0m"
 }
 
 
-function info()
-{
-    local -r message="${1}"
-
-    echo -e "\033[1;36m${message}\033[0m" 2>&1
+function boom() { 
+  error ${1}
+  sleep 1
+  exit 1
 }
 
 function yak() {

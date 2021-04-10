@@ -18,7 +18,7 @@ function info {
 
 
 function boom() { 
-  error ${1}
+  error "${1}"
   sleep 1
   exit 1
 }

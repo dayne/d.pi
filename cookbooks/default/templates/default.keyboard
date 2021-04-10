@@ -1,10 +1,12 @@
 # KEYBOARD CONFIGURATION FILE
+# Template from github.com/dayne/d.pi
 
 # Consult the keyboard(5) manual page.
 
 XKBMODEL="pc105"
 XKBLAYOUT="us"
 XKBVARIANT=""
+# CAPSLOCK is a silly thing - more accessable control key better
 XKBOPTIONS=ctrl:nocaps
 
 BACKSPACE="guess"

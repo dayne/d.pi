@@ -9,3 +9,11 @@ I'm using the [issue tracker](https://github.com/dayne/d.pi/issues) to keep trac
 ### credit / authorship
 
 There are a few tools in collected in here that started out as code provided online.  I have tried to ensure credit is given either directly at the top of the file in comments the location of the author or in another note. Licensing on blog posts can be vague - so my goal has been to give credit up and link to original source up front - please feel free to contact me if you are an author of code found here and want expanded credit/licensing/removal.
+
+#### master -> main
+```
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
+```

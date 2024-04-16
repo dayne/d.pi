@@ -1,0 +1,41 @@
+#!/usr/bin/bash
+
+SCAN_LOCK=/tmp/cec.scan
+
+to_pi() {
+  scan
+  cec-ctl -d/dev/cec0 --to 0 --active-source phys-addr=1.0.0.0
+}
+
+to_cc() {
+  scan
+  cec-ctl -d/dev/cec0 --to 0 --active-source phys-addr=4.0.0.0
+}
+
+scan() {
+  if [ -f $SCAN_LOCK ]; then
+    return
+  fi
+  echo "initiating cec0 --tv -S scan"
+  cec-ctl -d/dev/cec0 --tv -S
+  if [ $? -eq 0 ]; then
+    touch $SCAN_LOCK
+  else
+    echo "scan failed ...."
+    exit 1
+  fi
+}
+
+case $1 in
+  pi)
+    to_pi
+    ;;
+  cc)
+    to_cc
+    ;;
+  scan)
+    scan
+    ;;
+  *)
+    echo "pi | cc | scan"
+esac
